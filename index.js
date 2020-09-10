@@ -6,11 +6,23 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
-function createMenuItem(name, cost, category){
-    
+function createMenuItem(inputName, cost, inputCategory){
+
+  let newItem = {name: inputName, price: cost, category: inputCategory};
+  
+  return newItem;
+
 }
 
+//console.log(createMenuItem("pizza", 10, "dinner"));
+
+
+
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+
+createMenuItem("Pizza", 10, "Dinner");
+createMenuItem("Gyro", 8, "Dinner");
+createMenuItem("Pancakes", 6, "Breakfast");
 
 
 
@@ -24,11 +36,16 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+burger.discount = function(customer){
+  
+}
+
 
 
 ///////////////Reviews (MVP)///////////////////
 
-const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
+const reviews = [
+    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
     {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
     {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
@@ -57,7 +74,7 @@ reviews.push({ name:"rees", rating: 2.5, feedback: "I really wish the prices wer
 
 reviews[7].feedback = "i have never been here before i accidently clicked the leave review button"
 
-//console.log(reviews)
+//console.log(reviews);
 
 
 
@@ -75,11 +92,14 @@ and should return a string in the format `{name} gave the restaurant a {rating},
 */
 function getReviewByIndex(array, index) {
 
-  return array[index] = `${this.name} gave the restaurant a ${this.rating}, and their feedback was: ${this.feedback}`;
+  const review = array[index];
+
+
+  return `${review.name} gave the restaurant a ${review.rating}, and their feedback was: ${review.feedback}`;
 
 }
-  
-  console.log(getReviewByIndex(reviews, 3));
+
+//console.log(getReviewByIndex(reviews, 3));
 
 
 
@@ -97,12 +117,14 @@ For example, if getLastReview is invoked passing the reviews array it will retur
 */
 function getLastReview(array) {
 
-  return array[array.length -1] = `${this.name} gave the restaurant a ${this.rating}, and their feedback was: ${this.feedback}`;
+const lastReview = array[array.length -1];
+
+  return  `${lastReview.name} gave the restaurant a ${lastReview.rating}, and their feedback was: ${lastReview.feedback}`;
 
   
 } 
 
-console.log(getLastReview(reviews));
+//console.log(getLastReview(reviews));
 
 
 
