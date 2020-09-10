@@ -37,8 +37,18 @@ and should return a number.
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
 burger.discount = function(customer){
-  
+
+  if (customer === "teacher") {
+    return burger.price * 0.75;
+  } if (customer === "student") {
+    return burger.price * 0.75;
+  } else if (customer === "public") {
+    return burger.price * .9;
+  }
+
 }
+
+//console.log(burger.discount("student"));
 
 
 
